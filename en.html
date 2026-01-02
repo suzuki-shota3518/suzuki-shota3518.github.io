@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+    <title>Shota Suzuki - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* シンプルで読みやすいアカデミックなデザイン */
+        :root {
+            --primary-color: #2c3e50; /* 濃い紺色（知的な印象） */
+            --accent-color: #3498db;  /* リンク色 */
+            --bg-color: #fcfcfc;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* レイアウト */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 40px 60px;
+            position: relative; /* 言語ボタンの配置に必要 */
+        }
+
+        /* --- 言語切り替えボタン --- */
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .lang-switch a {
+            color: #999;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+        .lang-switch a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .lang-switch a:hover { color: var(--accent-color); }
+
+        /* ヘッダー（名前と所属） */
+        header {
+            text-align: center;
+            padding: 50px 0 40px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+        }
+
+        /* 【追加】顔写真のスタイル */
+        .profile-image {
+            width: 150px;       /* 写真の幅 */
+            height: 150px;      /* 写真の高さ */
+            border-radius: 50%; /* これで丸くなります */
+            object-fit: cover;  /* 写真が歪まないようにトリミング */
+            border: 3px solid #fff; /* 白いフチをつける */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* 軽い影をつける */
+            margin-bottom: 20px; /* 名前との間隔 */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            color: var(--primary-color);
+        }
+
+        .affiliation {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 0;
+        }
+
+        /* 各セクション */
+        section { margin-bottom: 50px; }
+
+        /* 大見出し (About Me, News, CV, Publications) */
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* 中見出し (Refereed, Non-Refereedなど) */
+        h3 {
+            font-size: 1.2rem;
+            color: #444;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-color); /* 左に青い線を入れて区別しやすく */
+            padding-left: 10px;
+        }
+
+        h4 { margin-bottom: 10px; color: #555; }
+
+        /* リストスタイル */
+        ul {
+            list-style-type: none; /* 点を消す */
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        .date {
+            font-weight: bold;
+            color: #777;
+            margin-right: 10px;
+            display: inline-block;
+            min-width: 150px;
+        }
+
+        .description {
+            display: block;
+            margin-top: 5px;
+            margin-left: 169px; /* 日付の分だけインデント */
+            font-size: 0.95rem;
+            color: #555;
+            max-width: 800px;
+        }
+
+        /* リンク */
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ソーシャルリンクボタン */
+        .social-links {
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .social-links i {
+            margin-right: 5px;
+        }
+
+        /* レスポンシブ対応（スマホ向け） */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .date { display: block; margin-bottom: 5px; }
+            .description { margin-left: 0; }
+            h1 { font-size: 2rem; }
+            .profile-image { width: 120px; height: 120px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="lang-switch">
+        <a href="index.html">JP</a> / <a href="en.html" class="active">EN</a>
+    </div>
+
+    <header>
+        <img src="profile.jpg" alt="Profile Picture" class="profile-image">
+
+        <h1>Shota Suzuki</h1>
+        <p class="affiliation">
+            Master's Student at Takeuchi Laboratory,<br>
+            Department of Electrical Engineering and Information Systems,<br>
+            Graduate School of Engineering, The University of Tokyo
+        </p>
+
+        <div class="social-links">
+            <a href="mailto:shota.suzuki@co-design.t.u-tokyo.ac.jp">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <!-- <a href="https://github.com/suzuki-shota3518" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a> -->
+            <a href="https://scholar.google.com/citations?user=lIZ2QwoAAAAJ&hl=en" target="_blank">
+                <i class="fas fa-graduation-cap"></i> Google Scholar
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100080443118319" target="_blank">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <a href="https://www.linkedin.com/in/shota-suzuki-112913280/" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am conducting research on novel computing systems centered around memory. I tackle challenges by leveraging knowledge from a wide range of fields, including algorithms, architecture, circuits, and devices.<br>
+            Areas of expertise: Large Language Models, Computer Architecture, Computation-in-Memory, Resistive Random-Access Memory (ReRAM)
+        </p>
+    </section>
+
+    <section id="news">
+        <h2>News</h2>
+        <ul>
+            <!-- <li>
+                <span class="date">2026.04.01</span>
+                Started Ph.D. program at The University of Tokyo.
+            </li> -->
+            <li>
+                <span class="date">Dec 2025</span>
+                Presented two papers at Design Gaia 2025.
+            </li>
+            <li>
+                <span class="date">Sep 2025</span>
+                Presented a paper at the International Conference on Solid State Devices and Materials (SSDM).
+            </li>
+            <li>
+                <span class="date">Jun 2025</span>
+                Presented a paper at the IEEE Silicon Nanoelectronics Workshop (SNW).
+            </li>
+        </ul>
+    </section>
+
+    <section id="cv">
+        <h2>Education</h2>
+        <ul>
+            <!-- <li><span class="date">Apr 2026 - Present</span> <strong>Ph.D in Electrical Engineering</strong>, The University of Tokyo</li> -->
+            <li><span class="date">Apr 2024 - Present</span> <strong>M.E. in Electrical Engineering</strong>, The University of Tokyo</li>
+            <li><span class="date">Apr 2020 - Mar 2024</span> <strong>B.E. in Electrical Engineering</strong>, The University of Tokyo</li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>Work Experience</h2>
+        <ul>
+            <li>
+                <span class="date">Oct 2022 - Sep 2025</span>
+                <strong>Part-time Engineer</strong>, TOWN Inc.<br>
+                <span class="description">Responsible for building and operating cloud infrastructure using AWS and automating tests using Serverspec. <br>
+                Participated in a project to automate server construction using Microsoft Azure OpenAI.</span>
+            </li>
+            <li>
+                <span class="date">Feb 2025 - Jul 2025</span>
+                <strong>Teaching Assistant</strong>, The University of Tokyo<br>
+                <span class="description">Assisted in teaching the course "Prototyping Experience to Shape Ideas - Prototype Design in the AI Era" for first- and second-year undergraduate students.</span>
+            </li>
+            <li>
+                <span class="date">Oct 2024 - Dec 2024</span>
+                <strong>Teaching Assistant</strong>, The University of Tokyo<br>
+                <span class="description">Assisted in teaching the laboratory course "Approximate Computing for Machine Learning Applications" for third-year undergraduate students.</span>
+            </li>
+            <li>
+                <span class="date">Aug 2024 - Sep 2024</span>
+                <strong>Research Internship</strong>, University of Leoben<br>
+                <span class="description">Conducted a research internship on the analysis of X-ray diffraction spectra using neural networks.<br>
+                    Mentor: Assoc. Prof. Ernst Gamsjäger</span>
+            </li>
+            <li>
+                <span class="date">Feb 2024 - Jul 2024</span>
+                <strong>Teaching Assistant</strong>, The University of Tokyo<br>
+                <span class="description">Assisted in teaching the course "Prototyping Experience to Shape Ideas - From Robots to Home Appliances" for first- and second-year undergraduate students.</span>
+            </li>
+            <li>
+                <span class="date">May 2024 - May 2024</span>
+                <strong>Teaching Assistant</strong>, The University of Tokyo<br>
+                <span class="description">Assisted in teaching the laboratory course "Analog Circuits" for third-year undergraduate students.</span>
+            </li>
+            <li>
+                <span class="date">Mar 2024 - May 2024</span>
+                <strong>Teaching Assistant</strong>, The University of Tokyo<br>
+                <span class="description">Assisted in teaching the course "VLSI Architecture" for fourth-year undergraduate students.</span>
+            </li>
+            <li>
+                <span class="date">Feb 2023 - Jul 2023</span>
+                <strong>Teaching Assistant</strong>, The University of Tokyo<br>
+                <span class="description">Assisted in teaching the course "Prototyping Experience to Shape Ideas - From Robots to Home Appliances" for first- and second-year undergraduate students.</span>
+            </li>
+            <li>
+                <span class="date">Feb 2022 - Jul 2022</span>
+                <strong>Teaching Assistant</strong>, The University of Tokyo<br>
+                <span class="description">Assisted in teaching the course "Prototyping Experience to Shape Ideas - From Robots to Home Appliances" for first- and second-year undergraduate students.</span>
+            </li>
+        </ul>
+    </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+
+        <h3>Refereed</h3>
+
+        <h4>Journal Articles</h4>
+        <ul>
+            <li>
+                Yuya Degawa, <strong>Shota Suzuki</strong>, Junichiro Kadomoto, Hidetsugu Irie, and Shuichi Sakai, "Cycle-Oriented Dynamic Approximation: Architectural Framework to Meet Performance Requirements,"
+                <em>IEEE Computer Architecture Letters</em>, pp.211-214, vol.23, no.2, Aug 2024.
+                [<a href="https://doi.org/10.1109/LCA.2024.3439318">PDF</a>]
+            </li>
+        </ul>
+
+        <h4>International Conferences</h4>
+        <ul>
+            <li>
+                <strong>Shota Suzuki</strong>, Naoko Misawa, Chihiro Matsui and Ken Takeuchi, "Hybrid SLC/MLC ReRAM for Quantized KV Cache in Transformer-based LLM,"
+                <em>International Conference on Solid State Devices and Materials (SSDM) Poster Late News</em>, pp.755-756, Sep 2025.
+                [<a href="https://doi.org/10.7567/SSDM.2025.PS-02-31">PDF</a>]
+            </li>
+            <li>
+                <strong>Shota Suzuki</strong>, Naoko Misawa, Chihiro Matsui and Ken Takeuchi, "Observation of State Change in 40nm TaOx ReRAM Cells during Read-disturb,"
+                <em>IEEE Silicon Nanoelectronics Workshop (SNW)</em>, pp.26-27, Jun 2025.
+                [<a href="https://doi.org/10.23919/SNW65111.2025.11097277">PDF</a>]
+            </li>
+        </ul>
+
+        <h4>Domestic Conferences</h4>
+        <ul>
+            <li>
+                <strong>Shota Suzuki</strong>, Yuya Degawa, Tomohiro Yoshida, Junichiro Kadomoto, Hidetsugu Irie, and Shuichi Sakai, "RTL Design and Soft Processor Implementation of an Architecture for Cycle-oriented Dynamic Approximation,"
+                <em>cross-disciplinary workshop on Computing Systems, Infrastructures, and Programming (xSIG)</em>, pp.1-14, Aug 2024. <strong>(Best Research Award)</strong>
+            </li>
+        </ul>
+
+        <h3>Non-Refereed</h3>
+
+        <h4>Domestic Conferences / Workshops</h4>
+        <ul>
+            <li>
+                <strong>Shota Suzuki</strong>, Naoko Misawa, Chihiro Matsui, Ken Takeuchi, "Changes in Read Current and RTN Frequency due to Read-disturb in 40nm TaOx ReRAM,"
+                <em>IEICE Technical Report</em>, vol.125, no.261, ICD2025-50, pp.74-79, Dec 2025.
+            </li>
+            <li>
+                <strong>Shota Suzuki</strong>, Naoko Misawa, Chihiro Matsui, Ken Takeuchi, "Investigation of ReRAM Mapping Techniques for Storing Quantized KV Cache in LLMs,"
+                <em>IEICE Technical Report</em>, vol.125, no.260, VLD2025-59, pp.227-232, Dec 2025.
+            </li>
+            <li>
+                Daichi Mikubo, <strong>Shota Suzuki</strong>, Shu Sugita, Junichiro Kadomoto, Hidetsugu Irie, "Acceleration of speech feature extraction using an architecture with dynamically controllable computational precision,"
+                <em>The 24th Forum on Information Technology (FIT)</em>, Selected Session CC-002, Sep 2025.
+            </li>
+            <li>
+                Yifan Wang, Adil Padiyal, Daqi Lin, <strong>Shota Suzuki</strong>, Chihiro Matsui, and Ken Takeuchi, “A Design for Digital-CiM INT8 Transformer Accelerator with Pipeline,”
+                <em>The 72nd JSAP Spring Meeting</em>, 16a-K306-5, Mar 2025.
+            </li>
+        </ul>
+
+        <!-- <h4>Preprints</h4>
+        <ul>
+            <li>
+                <strong>Taro Yamada</strong>. "Title of Preprint".
+                <em>arXiv preprint arXiv:2501.XXXXX</em>, 2025.
+            </li>
+        </ul> -->
+
+    </section>
+
+    <section id="awards">
+        <h2>Awards & Grants</h2>
+        <ul>
+            <li>
+                <span class="date">Aug 2024</span>
+                <strong>Best Research Award</strong>, cross-disciplinary workshop on Computing Systems, Infrastructures, and Programming (xSIG) 2024
+            </li>
+        </ul>
+    </section>
+</div>
+
+</body>
+</html>
