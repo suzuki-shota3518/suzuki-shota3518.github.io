@@ -17,7 +17,7 @@ body {
 
 /* レイアウト */
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px 40px 60px;
     position: relative; /* 言語ボタンの配置に必要 */
@@ -104,21 +104,28 @@ ul {
 }
 
 li {
+    position: relative; /* 日付を絶対配置するための基準点 */
     margin-bottom: 20px;
 }
 
+/* --- 【重要】 .date を持っている li だけに適用する設定 --- */
+/* ブラウザの機能 (:has) を使い、「中に.dateがあるli」だけを探します */
+li:has(.date) {
+    padding-left: 175px; /* 日付が入るスペース(155px) + 余白(15px) を左に空ける */
+}
+
 .date {
+    position: absolute; /* 左に空けたスペースに強制的に配置 */
+    left: 0;
+    top: 0;
+    width: 160px;       /* 日付の幅 */
     font-weight: bold;
     color: #777;
-    margin-right: 10px;
-    display: inline-block;
-    min-width: 150px;
 }
 
 .description {
     display: block;
     margin-top: 5px;
-    margin-left: 169px; /* 日付の分だけインデント */
     font-size: 0.95rem;
     color: #555;
     max-width: 800px;
@@ -152,8 +159,17 @@ a:hover {
 /* レスポンシブ対応（スマホ向け） */
 @media (max-width: 600px) {
     .container { padding: 15px; }
-    .date { display: block; margin-bottom: 5px; }
+    /* 日付を通常の配置（元あった場所）に戻す */
+    .date {
+        position: static; /* absoluteを解除 */
+        display: block;
+        margin-bottom: 5px;
+    }
     .description { margin-left: 0; }
     h1 { font-size: 2rem; }
     .profile-image { width: 120px; height: 120px; }
+    /* スマホでは左の空きスペースを無くす */
+    li:has(.date) {
+        padding-left: 0;
+    }
 }
