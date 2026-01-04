@@ -173,3 +173,8 @@ a:hover {
         padding-left: 0;
     }
 }
+
+/* 文字の改行を禁止するのではなく、「かたまり」として扱うクラス */
+.nobreak {
+    display: inline-block;
+}
